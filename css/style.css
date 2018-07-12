@@ -1,0 +1,339 @@
+*{margin:0;padding:0;box-sizing: border-box;}
+ol, ul{list-style: none;}
+/*svg*/
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+.space-wrapper{
+	position: absolute;
+	top:0;
+	left: 0;
+	height: 100vh;
+	width:100%;
+	background-color: #0f1729;
+	color:#fff;
+	display: flex;
+	justify-content: center;
+}
+
+.home-content{
+	position: absolute;
+	top:6%;
+	text-align: center;
+	font-family: sans-serif;
+}
+.home-content h1{
+	line-height: 2em;
+}
+
+.stars{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: star-rotate linear 600s infinite
+}
+
+@keyframes star-rotate{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+.star{
+	position:absolute;
+	background-color: #fff;
+	border-radius: 50%;
+}
+.star.medium{
+	width:4px;
+	height:4px;
+}
+.star.small{
+	width:2px;
+	height:2px;
+}
+
+.sun{
+	position: relative;
+	animation: sun-rotate linear 20s infinite;
+}
+@keyframes sun-rotate{
+	0%{
+		transform: rotate(0deg) scale(0.7);
+	}
+	50%{
+		transform: rotate(180deg) scale(1);
+	}
+	100%{
+		transform: rotate(360deg) scale(0.7);
+	}
+}
+.sun .sun-core{
+	position: relative;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background-color: #f0b555;
+}
+
+.sun::before, .sun::after, .sun .sun-core::before, .sun .sun-core::after{
+	position: absolute;
+	content: '';
+	width: 96px;
+	height: 96px;
+	border-radius: 50%;
+	background-color: rgba(255, 208, 128, 0.05);
+	z-index: 1;
+}
+.sun::before, .sun::after{
+	left:-16px;
+}
+.sun::before{
+	bottom:0;
+}
+.sun::after{
+	top:0;
+}
+.sun .sun-core::before, .sun .sun-core::after{
+	top:-16px;
+}
+.sun .sun-core::before{
+	right:0;
+}
+.sun .sun-core::after{
+	left: 0;
+}
+
+.earth-moon-group{
+	position: absolute;
+	top:calc(50% - (192px / 2));
+	left:calc(50% - (192px / 2));
+	transform: rotate(190deg) translateY(-90%) scale(0.6);
+}
+.earth{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 192px;
+	height: 192px;
+}
+.earth-planet{
+	position: relative;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background-color: #ACE3FF;
+	overflow: hidden;
+}
+.earth .planet-land-container{
+	position: relative;
+	width:100%;
+	height: 100%;
+}
+.earth .planet-land{
+	border-radius: 50%;
+	background-color: #c5ffd2;
+}
+.earth .planet-land.land-1{
+	width: 64%;
+	height:64%;
+}
+.earth .planet-land.land-2{
+	width:32%;
+	height: 32%;
+	margin-top:18%;
+	margin-left:20%;
+}
+.earth .planet-land.land-3{
+	width:16%;
+	height: 16%;
+	margin-top: -32%;
+	margin-left: 96%;
+}
+.animation-earth-rotate{
+	animation: earth-rotate linear 60s infinite;
+}
+@keyframes earth-rotate{
+	0%{
+		transform: translateX(90%);
+	}
+	100%{
+		transform: translateX(-100%);
+	}
+}
+
+.earth .earth-planet-shadow{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left: 0;
+	border-radius: 50%;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 31px 0px 0px inset;
+}
+
+.earth .earth-ozone{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	opacity: 0.3;
+	background-color: rgb(40, 75, 215);
+    background-image: linear-gradient(135deg, rgb(208, 122, 138), rgb(40, 75, 215));
+}
+.animation-gradient{
+	background-size: 200% 200%;
+	animation: gradient cubic-bezier(0.445, 0.05, 0.55, 0.95) 10s infinite;
+}
+@keyframes gradient{
+	0%{
+		background-position: 0% 0%;
+	}
+	50%{
+		background-position: 100% 100%;
+	}
+	100%{
+		background-position: 0% 0%;
+	}
+}
+
+.space-wrapper .moon{
+	position: absolute;
+	top:calc(50% - (24px / 2));
+	left: calc(50% - (24px / 2));
+}
+
+.moon{
+	width: 24px;
+	height: 23px;
+	overflow: hidden;
+	border-radius: 50%;
+	background-color: #b9b9b9;
+	transform: rotate(91deg) translateY(-130px);
+}
+.moon::before, .moon::after{
+	position: relative;
+	content: '';
+	background-color: #a0a0a0;
+	border-radius: 50%;
+	display: block;
+}
+.moon::before{
+	width:60%;
+	height: 60%;
+}
+.moon::after{
+	width: 30%;
+	height: 30%;
+	margin:2px 0 0 12px;
+}
+
+/*about me*/
+.person-info{
+	position: absolute;
+	top:100vh;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #0f1729;
+	color:#fff;
+}
+.person-info h1{
+	text-align: center;
+	margin-bottom:20px;
+}
+.avtor-wrapper img{
+	border-radius: 50%;
+	border:3px solid #fff;
+}
+
+.star-container{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.info-content{
+	display: flex;
+	flex-direction: column;
+}
+.info-content li{
+	height: 32px;
+	line-height: 32px;
+	display: flex;
+	align-items: center;
+	margin-bottom:20px;
+	position: relative;
+}
+.info-content li::after{
+	position: absolute;
+	content: '';
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #f0f0f0;
+	transform: scaleY(0.5);
+}
+.info-content li svg{
+	width:24px;
+	height: 24px;
+	margin-right:20px;
+}
+.info-content li span{
+	margin-right:10px;
+	position: relative;
+}
+.info-content li span.sub-info::after{
+	position: absolute;
+	content: '';
+	top:calc(50% - (2px / 2));
+	left:-5px;
+	width:2px;
+	height: 2px;
+	background-color: #fff;
+}
+
+/*skill info*/
+.skill-info{
+	position: absolute;
+	top:200vh;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #0f1729;
+	color:#fff;
+	padding: 20px;
+}
+.skill-info h1{
+	text-align: center;
+	margin-bottom:20px;
+}
+
+.skill-info .skill-list li{
+	margin-bottom: 10px;
+}
+
+.skill-info .skill-name{
+	font-size:18px;
+	font-weight: 600;
+}
+
+.skill-info .skill-desc{
+	padding-left:2em;
+}
