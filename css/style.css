@@ -247,7 +247,7 @@ ol, ul{list-style: none;}
 	justify-content: center;
 	align-items: center;
 	background-color: #0f1729;
-	color:#fff;
+	color:#f0f0f0;
 	z-index: -1;
 }
 .person-info h1{
@@ -341,9 +341,11 @@ ol, ul{list-style: none;}
 
 /*saturn*/
 .saturn {
+	position: absolute;
+    bottom: 20px;
+    right: 50%;
     height: 65px;
     width: 65px;
-    position: relative;
 }
 .saturn:before, .saturn:after{
 	position: absolute;
@@ -390,12 +392,14 @@ ol, ul{list-style: none;}
 
 /*mars*/
 .mars{
+	position: absolute;
+	top:100px;
+	left:20px;
 	width:42px;
 	height: 42px;
 	background-color: #c25447;
 	box-shadow: inset -3px -3px #b34538;
 	border-radius: 50%;
-	position: relative;
 }
 .mars::before,.mars::after{
 	position: absolute;
@@ -423,7 +427,9 @@ ol, ul{list-style: none;}
     transform: rotate(30deg);
 }
 .earth-second{
-	position: relative;
+	position: absolute;
+	top:50%;
+	right: 20px;
 	width: 50px;
 	height: 50px;
 	background-color: #496482;
@@ -449,4 +455,211 @@ ol, ul{list-style: none;}
 	width: 10px;
 	height: 12px;
 	transform: rotate(-45deg);
+}
+.animation-marsJump{
+	animation: marsJump 2.76s -1.4s linear infinite
+}
+@keyframes marsJump{
+	0%{
+		top:40px;
+	}
+	30%{
+		top:35px;
+	}
+	70%{
+		top:45px;
+	}
+	100%{
+		top:40px;
+	}
+}
+
+/*astronaut*/
+.astronaut{
+	position: relative;
+	width:150px;
+	height: 200px;
+	transform: rotate(-36deg) scale(0.6);
+	/*animation: shake 1s infinite;*/
+}
+@keyframes shake{
+	0%{
+		transform: translate(2px,3px);
+	}
+	25%{
+		transform: translate(1px,1px);
+	}
+	50%{
+		transform: translate(3px, 2px);
+	}
+	75%{
+		transform: translate(0px 0px);
+	}
+	100%{
+		transform: translate(2px,3px);
+	}
+}
+.astronaut .head{
+	width: 85px;
+	height: 85px;
+	border-radius: 50%;
+	background-color: #fdc526;
+	margin-left: auto;
+	position: relative;
+	z-index: 3;
+	overflow: hidden;
+	box-shadow: inset -25px -10px 0px -15px #f0ac23;
+}
+.astronaut .head::before, .astronaut .head::after{
+	position: absolute;
+	content: '';
+}
+.astronaut .head::before{
+	width: 85px;
+	height: 85px;
+	background-color: #fefefe;
+	border-radius: 50%;
+	margin-left: auto;
+	bottom: -20px;
+    left: -2px;
+}
+.astronaut .head::after{
+	width: 15px;
+	height: 7px;
+	top:40px;
+	left: 25px;
+	z-index: 5;
+	border-radius: 5px;
+	background-color: #fefefe;
+	box-shadow: inset 0 0 7px #e3e3e3;
+	transform: rotate(-50deg);
+}
+.astronaut .body{
+	position: absolute;
+	top:55px;
+	left: 10px;
+	width: 100px;
+	height: 100px;
+}
+.astronaut .hand{
+	position: absolute;
+	top:25px;
+	left: 20px;
+	width: 60px;
+	height: 15px;
+	border-radius: 10px;
+	background-color: #fefefe;
+	box-shadow: inset 9px -15px 0px -10px #e3e3e3;
+	transform: rotate(-45deg);
+	z-index: 2;
+}
+.astronaut .chest{
+	position: absolute;
+	top:30px;
+	left: 35px;
+	width: 60px;
+	height: 30px;
+	border-radius: 15px;
+	background-color: #fefefe;
+	box-shadow: inset 9px -15px 0px -10px #e3e3e3;
+	transform: rotate(-45deg);
+}
+.astronaut .leg{
+	position: absolute;
+	bottom:25px;
+	left: 22px;
+	width: 30px;
+	height: 12px;
+	border-radius: 7px;
+	background-color: #fefefe;
+	box-shadow: inset -5px -15px 0px -10px #e3e3e3;
+	transform: rotate(-45deg);
+}
+.astronaut .leg::before{
+	position: absolute;
+	content: '';
+	top:11px;
+	left: 5px;
+	width: 30px;
+	height: 12px;
+	border-radius: 7px;
+	background-color: #fefefe;
+	box-shadow: inset -5px -15px 0px -10px #e3e3e3;
+}
+.astronaut .rocket{
+	position: absolute;
+    top: 70px;
+    left: 28px;
+    width: 50px;
+    height: 25px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #fdc526;
+    box-shadow: inset -5px -10px 0px -2px #f0ac23;
+    transform: rotate(-52deg);
+}
+.astronaut .tail{
+	position: absolute;
+	bottom: -22px;
+	left: -18px;
+	width: 50px;
+	height: 50px;
+	transform: rotate(43deg);
+}
+.astronaut .tail span{
+	position: absolute;
+	width: 2px;
+	height: 45px;
+	background-color: #e3e3e3;
+	animation: go 1s infinite;
+}
+.astronaut .tail span:nth-child(1){
+	bottom: 80px;
+	left: -15px;
+	animation-delay: 0s;
+}
+.astronaut .tail span:nth-child(2){
+	bottom: 51px;
+	left: 8px;
+	animation-delay: 0.7s;
+}
+.astronaut .tail span:nth-child(3){
+	bottom: 35px;
+	left: 30px;
+	animation-delay: 0.3s;
+}
+@keyframes go{
+	0%{
+		transform: translate(5%,5%);
+	}
+	10%{
+		transform: translate(10%,10%);
+	}
+	20%{
+		transform: translate(20%,20%);
+	}
+	30%{
+		transform: translate(30%,30%);
+	}
+	40%{
+		transform: translate(45%,45%);
+	}
+	50%{
+		transform: translate(60%,60%);
+	}
+	60%{
+		transform: translate(75%,75%);
+	}
+	70%{
+		transform: translate(90%,90%);
+	}
+	80%{
+		transform: translate(115%,115%);
+	}
+	90%{
+		transform: translate(130%,130%);
+	}
+	100%{
+		transform: translate(150%,150%);
+	}
 }

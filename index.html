@@ -6,135 +6,160 @@
 		<link rel="stylesheet" href="./css/style.css">
 	</head>
 	<body>
-	<div id="app">
-		<div class="home-page">
-			<div class="space-wrapper">
-				 <div class="home-content">
-					<h1>Hello World</h1>
-					<p>Everything start from here</p>
-				</div>
-				<ol class="stars">
-				<li class="sun"><div class="sun-core"></div></li>
-				</ol>
-				<div class="earth-moon-group">
-					<div class="earth">
-					    <div class="earth-planet">
-					    	<div class="planet-land-container animation-earth-rotate">
-					    		<div class="planet-land land-1"></div>
-					    		<div class="planet-land land-2"></div>
-					    		<div class="planet-land land-3"></div>
-					    	</div>
-					    	<div class="earth-planet-shadow"></div>
-					    </div>
-						<div class="earth-ozone animation-gradient"></div>
+	<nav>
+		<ul id="menu">
+			<li data-menuanchor="page1" class="active"></li>
+			<li data-menuanchor="page2"></li>
+			<li data-menuanchor="page3"></li>
+			<li data-menuanchor="page4"></li>
+		</ul>
+	</nav>
+	<main>
+		<div id="fullpage">
+			<div class="home-page">
+				<div class="space-wrapper">
+					 <div class="home-content">
+						<h1>Hello World</h1>
+						<p>Everything start from here</p>
 					</div>
-					<div class="moon"></div>
+					<ol class="stars">
+					<li class="sun"><div class="sun-core"></div></li>
+					</ol>
+					<div class="earth-moon-group">
+						<div class="earth">
+						    <div class="earth-planet">
+						    	<div class="planet-land-container animation-earth-rotate">
+						    		<div class="planet-land land-1"></div>
+						    		<div class="planet-land land-2"></div>
+						    		<div class="planet-land land-3"></div>
+						    	</div>
+						    	<div class="earth-planet-shadow"></div>
+						    </div>
+							<div class="earth-ozone animation-gradient"></div>
+						</div>
+						<div class="moon"></div>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="person-info">
-		   <!-- <div class="saturn">
-		   	<div class="saturn-core animation-saturn"></div>
-		   </div>
-		   <div class="mars"></div>
-		   <div class="venus"></div>
-		   <div class="earth-second"></div> -->
-			<h1>About Me</h1>
-			<div class="avtor-wrapper">
-				<img src="./img/avtor.jpg" width=120 height=120 alt="">
+			<div class="person-info">
+			   <div class="saturn">
+			   	<div class="saturn-core animation-saturn"></div>
+			   </div>
+			   <div class="mars animation-marsJump"></div>
+			   <!-- <div class="venus"></div> -->
+			   <div class="earth-second"></div>
+				<h1>About Me</h1>
+				<div class="avtor-wrapper">
+					<img src="./img/avtor.jpg" width=120 height=120 alt="">
+				</div>
+				<ol class="info-content">
+					<li>
+						<svg class="icon" aria-hidden="true">
+						    <use xlink:href="#icon-fonts-user"></use>
+						</svg>
+						<span>唐晓</span>
+						<span class="sub-info">23</span>
+					</li>
+					<li>
+						<svg class="icon" aria-hidden="true">
+						    <use xlink:href="#icon-location"></use>
+						</svg>
+						<span>中国</span>
+						<span class="sub-info">深圳</span>
+					</li>
+					<li>
+						<svg class="icon" aria-hidden="true">
+						    <use xlink:href="#icon-jiaoyujingli"></use>
+						</svg>
+						<span>中国矿业大学</span>
+						<span class="sub-info">本科</span>
+					</li>
+					<li>
+						<svg class="icon" aria-hidden="true">
+						    <use xlink:href="#icon-iceducation"></use>
+						</svg>
+						<span>电子商务</span>
+						<span class="sub-info">2012-2016</span>
+					</li>
+					<li>
+						<svg class="icon" aria-hidden="true">
+						    <use xlink:href="#icon-workflowmonitoring"></use>
+						</svg>
+						<span>朝歌视界</span>
+						<span class="sub-info">1.5年</span>
+					</li>
+					<li>
+						<svg class="icon" aria-hidden="true">
+						    <use xlink:href="#icon-basketball"></use>
+						</svg>
+						<span>前端开发工程师</span>
+					</li>
+					<li>
+						<svg class="icon" aria-hidden="true">
+						    <use xlink:href="#icon-email"></use>
+						</svg>
+						<span>demo_12@126.com</span>
+					</li>
+					<li>
+						<svg class="icon" aria-hidden="true">
+						    <use xlink:href="#icon-qq"></use>
+						</svg>
+						<span>506584418</span>
+					</li>
+				</ol>
 			</div>
-			<!-- <ol class="info-content">
-				<li>
-					<svg class="icon" aria-hidden="true">
-					    <use xlink:href="#icon-fonts-user"></use>
-					</svg>
-					<span>唐晓</span>
-					<span class="sub-info">23</span>
-				</li>
-				<li>
-					<svg class="icon" aria-hidden="true">
-					    <use xlink:href="#icon-location"></use>
-					</svg>
-					<span>中国</span>
-					<span class="sub-info">深圳</span>
-				</li>
-				<li>
-					<svg class="icon" aria-hidden="true">
-					    <use xlink:href="#icon-jiaoyujingli"></use>
-					</svg>
-					<span>中国矿业大学</span>
-					<span class="sub-info">本科</span>
-				</li>
-				<li>
-					<svg class="icon" aria-hidden="true">
-					    <use xlink:href="#icon-iceducation"></use>
-					</svg>
-					<span>电子商务</span>
-					<span class="sub-info">2012-2016</span>
-				</li>
-				<li>
-					<svg class="icon" aria-hidden="true">
-					    <use xlink:href="#icon-workflowmonitoring"></use>
-					</svg>
-					<span>朝歌视界</span>
-					<span class="sub-info">1.5年</span>
-				</li>
-				<li>
-					<svg class="icon" aria-hidden="true">
-					    <use xlink:href="#icon-basketball"></use>
-					</svg>
-					<span>前端开发工程师</span>
-				</li>
-				<li>
-					<svg class="icon" aria-hidden="true">
-					    <use xlink:href="#icon-email"></use>
-					</svg>
-					<span>demo_12@126.com</span>
-				</li>
-				<li>
-					<svg class="icon" aria-hidden="true">
-					    <use xlink:href="#icon-qq"></use>
-					</svg>
-					<span>506584418</span>
-				</li>
-			</ol> -->
+			<div class="skill-info">
+			    <div class="astronaut">
+			    	<div class="head"></div>
+			    	<div class="body">
+			    		<div class="hand"></div>
+			    		<div class="chest"></div>
+			    		<div class="leg"></div>
+			    	</div>
+			    	<div class="rocket"></div>
+			    	<div class="tail">
+			    		<span></span>
+			    		<span></span>
+			    		<span></span>
+			    	</div>
+			    </div>
+				<!-- <h1>技能描述</h1>
+				<ul class="skill-list">
+					<li>
+						<p class="skill-name">1. 微信小程序</p>
+						<p class="skill-desc">可独立开发微信小程序，熟悉微信网络请求、数据缓存等API的使用。</p>
+					</li>
+					<li>
+						<p class="skill-name">2. Vue</p>
+						<p class="skill-desc">熟悉Vue常用功能，如数据绑定、vue-router、vuex等。</p>
+					</li>
+					<li>
+						<p class="skill-name">3. Angular</p>
+						<p class="skill-desc">熟悉Angular数据绑定，组件通信及事件发布订阅等常用功能。</p>
+					</li>
+					<li>
+						<p class="skill-name">4. jQuery</p>
+						<p class="skill-desc">熟悉 jQuery 的常用 API，能使用 jQuery 制作网站、轮播、Tab 组件等。</p>
+					</li>
+					<li>
+						<p class="skill-name">5. HTML 5 & CSS 3</p>
+						<p class="skill-desc">能独立制作精美网页，掌握 CSS 3 动画、过渡效果、响应式等常用技术。</p>
+					</li>
+					<li>
+						<p class="skill-name">6. 移动端页面</p>
+						<p class="skill-desc">会使用 REM、vw/vh、FastClick 等技术制作适配手机设备的页面。</p>
+					</li>
+					<li>
+						<p class="skill-name">7. 前端框架</p>
+						<p class="skill-desc">理解 MVC、MVVM 等思想，可以熟练使用相关的库，如 Vue、React</p>
+					</li>
+				</ul> -->
+			</div>
 		</div>
-		<div class="skill-info">
-			<!-- <h1>技能描述</h1>
-			<ul class="skill-list">
-				<li>
-					<p class="skill-name">1. 微信小程序</p>
-					<p class="skill-desc">可独立开发微信小程序，熟悉微信网络请求、数据缓存等API的使用。</p>
-				</li>
-				<li>
-					<p class="skill-name">2. Vue</p>
-					<p class="skill-desc">熟悉Vue常用功能，如数据绑定、vue-router、vuex等。</p>
-				</li>
-				<li>
-					<p class="skill-name">3. Angular</p>
-					<p class="skill-desc">熟悉Angular数据绑定，组件通信及事件发布订阅等常用功能。</p>
-				</li>
-				<li>
-					<p class="skill-name">4. jQuery</p>
-					<p class="skill-desc">熟悉 jQuery 的常用 API，能使用 jQuery 制作网站、轮播、Tab 组件等。</p>
-				</li>
-				<li>
-					<p class="skill-name">5. HTML 5 & CSS 3</p>
-					<p class="skill-desc">能独立制作精美网页，掌握 CSS 3 动画、过渡效果、响应式等常用技术。</p>
-				</li>
-				<li>
-					<p class="skill-name">6. 移动端页面</p>
-					<p class="skill-desc">会使用 REM、vw/vh、FastClick 等技术制作适配手机设备的页面。</p>
-				</li>
-				<li>
-					<p class="skill-name">7. 前端框架</p>
-					<p class="skill-desc">理解 MVC、MVVM 等思想，可以熟练使用相关的库，如 Vue、React</p>
-				</li>
-			</ul> -->
-		</div>
-	</div>
+	</main>
 	<script src="//at.alicdn.com/t/font_745538_q14bgcqfkg.js"></script>
 	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script src="./js/fullpage.js"></script>
 	<script src="./js/stars.js"></script>
 	</body>
 </html>	
