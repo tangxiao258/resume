@@ -15,8 +15,8 @@
 		</ul>
 	</nav>
 	<main>
-		<div id="fullpage">
-			<div class="section section1">
+		<div id="fullpage" class="fullpage-container">
+			<div class="section section1 app-left">
 				<div class="space-wrapper">
 					<div class="home-content">
 						<h1>Hello World</h1>
@@ -41,7 +41,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="section section2">
+			<div class="section section2 app-right">
 			    <div class="stars-container">
 			    	<div class="saturn animation-little">
 				   	    <div class="saturn-core animation-saturn"></div>
@@ -112,7 +112,7 @@
 					</li>
 				</ol>
 			</div>
-			<div class="section section3">
+			<div class="section section3 app-right">
 			    <div class="astronaut">
 			    	<div class="head"></div>
 			    	<div class="body">
@@ -161,39 +161,63 @@
 					</ul>
 				</div>
 			</div>
-			<div class="section section4">
+			<div class="section section4 app-right">
 				<h1>Projects</h1>
 			</div>
 		</div>
 	</main>
+	<style>
+		@media screen and (min-width:900px){
+			.fullpage-container{
+				position: absolute;
+				top:0;
+				right:0;
+				width: 50%;
+			}
+			.app-left{
+				position:fixed;
+				width:50%;
+				top:0;
+				left: 0;
+				height: 100vh;
+			}
+			.app-right{
+				background-color: #fff;
+				color:#1E1D32;
+			}
+		}
+	</style>
 	<script src="//at.alicdn.com/t/font_745538_2pqtxotk7ho.js"></script>
 	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<script src="./js/fullpage.js"></script>
 	<script src="./js/stars.js"></script>
 	<script>
 		!(function(){
-		    $('#fullpage').fullpage({
-                anchors:['page1','page2','page3','page4'],
-                menu:'#menu',
-                afterRender:function(){
-		            $('.section1 h1, .section1 p').hide();
-		            $('.section1 h1, .section1 p').fadeIn(2000);
-		        },
-		        afterLoad:function(anchorLink, index){
-		            if(index == 2){
-		                $('.section2').find('h1').fadeIn(2000);
-		                $('.info-content').animate({top:'0'},1000);
-		            }
-		            if(index == 3){
-		                $('.section3 .astronaut').animate({top:'-40%'},2000);
-		                $('.section3 .skill-content').animate({top:'0%'},2000);
-		            }
-		            if(index == 4){
-		                $('.section4 h1').fadeIn(2000);
-		                $('.section4 h3').delay(1000).animate({marginTop:'50px'},1000);
-		            }
-		        },
+			let screenWidth = document.documentElement.clientWidth
+			if(screenWidth < 450){
+				$('#fullpage').fullpage({
+	                anchors:['page1','page2','page3','page4'],
+	                menu:'#menu',
+	                afterRender:function(){
+			            $('.section1 h1, .section1 p').hide();
+			            $('.section1 h1, .section1 p').fadeIn(2000);
+			        },
+			        afterLoad:function(anchorLink, index){
+			            if(index == 2){
+			                $('.section2').find('h1').fadeIn(2000);
+			                $('.info-content').animate({top:'0'},1000);
+			            }
+			            if(index == 3){
+			                $('.section3 .astronaut').animate({top:'-40%'},2000);
+			                $('.section3 .skill-content').animate({top:'0%'},2000);
+			            }
+			            if(index == 4){
+			                $('.section4 h1').fadeIn(2000);
+			                $('.section4 h3').delay(1000).animate({marginTop:'50px'},1000);
+			            }
+			        }
 		    })
+			}
 		})()
 	</script>
 	</body>
