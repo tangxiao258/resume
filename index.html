@@ -18,7 +18,7 @@
 		<div id="fullpage">
 			<div class="section section1">
 				<div class="space-wrapper">
-					 <div class="home-content">
+					<div class="home-content">
 						<h1>Hello World</h1>
 						<p>Everything start from here</p>
 					</div>
@@ -42,11 +42,16 @@
 				</div>
 			</div>
 			<div class="section section2">
-			   <div class="saturn">
-			   	<div class="saturn-core animation-saturn"></div>
-			   </div>
-			   <div class="mars animation-marsJump"></div>
-			   <div class="earth-second"></div>
+			    <div class="stars-container">
+			    	<div class="saturn animation-little">
+				   	    <div class="saturn-core animation-saturn"></div>
+				   </div>
+				   <!-- <div class="venus"></div> -->
+				   <div class="mars animation-marsJump">
+				   	    <div class="mars-ozone"></div>
+				   </div>
+				   <div class="earth-second animation-earthJump"></div>
+			    </div>
 				<h1>About Me</h1>
 				<div class="avtor-wrapper">
 					<img src="./img/avtor.jpg" width=120 height=120 alt="">
@@ -122,9 +127,8 @@
 			    		<span></span>
 			    	</div>
 			    </div>
-			    <!-- <div class="venus"></div> -->
 				<div class="skill-content">
-					<h1>技能描述</h1>
+					<h1>Skill</h1>
 					<ul class="skill-list">
 						<li>
 							<p class="skill-name">1. 微信小程序</p>
@@ -157,9 +161,12 @@
 					</ul>
 				</div>
 			</div>
+			<div class="section section4">
+				<h1>Projects</h1>
+			</div>
 		</div>
 	</main>
-	<script src="//at.alicdn.com/t/font_745538_q14bgcqfkg.js"></script>
+	<script src="//at.alicdn.com/t/font_745538_2pqtxotk7ho.js"></script>
 	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<script src="./js/fullpage.js"></script>
 	<script src="./js/stars.js"></script>
@@ -179,7 +186,7 @@
 		            }
 		            if(index == 3){
 		                $('.section3 .astronaut').animate({top:'-40%'},2000);
-		                $('.section3 .skill-content').animate({top:'-30%'},2000);
+		                $('.section3 .skill-content').animate({top:'0%'},2000);
 		            }
 		            if(index == 4){
 		                $('.section4 h1').fadeIn(2000);
