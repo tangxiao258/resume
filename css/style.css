@@ -236,8 +236,12 @@ ol, ul{list-style: none;}
 	margin:2px 0 0 12px;
 }
 
+main{
+	background-color: #0f1729;
+}
+
 /*about me*/
-.person-info{
+.section2{
 	position: absolute;
 	top:100vh;
 	width: 100vw;
@@ -250,10 +254,17 @@ ol, ul{list-style: none;}
 	color:#f0f0f0;
 	z-index: -1;
 }
-.person-info h1{
+.section h1{
 	text-align: center;
 	margin-bottom:20px;
+	line-height: 2em;
 }
+.avtor-wrapper{
+	display: flex;
+	justify-content: center;
+	margin:20px auto;
+}
+
 .avtor-wrapper img{
 	border-radius: 50%;
 	border:3px solid #525988;
@@ -267,6 +278,8 @@ ol, ul{list-style: none;}
 	height: 100%;
 }
 .info-content{
+	position: relative;
+    top: 100%;
 	display: flex;
 	flex-direction: column;
 }
@@ -308,7 +321,7 @@ ol, ul{list-style: none;}
 }
 
 /*skill info*/
-.skill-info{
+.section3{
 	position: absolute;
 	top:200vh;
 	width: 100vw;
@@ -320,22 +333,23 @@ ol, ul{list-style: none;}
 	background-color: #0f1729;
 	color:#fff;
 	padding: 20px;
+	overflow: hidden;
 }
-.skill-info h1{
-	text-align: center;
-	margin-bottom:20px;
+.skill-content{
+	position: relative;
+	top:100%;
 }
 
-.skill-info .skill-list li{
+.skill-list li{
 	margin-bottom: 10px;
 }
 
-.skill-info .skill-name{
+.skill-name{
 	font-size:18px;
 	font-weight: 600;
 }
 
-.skill-info .skill-desc{
+.skill-desc{
 	padding-left:2em;
 }
 
@@ -477,6 +491,7 @@ ol, ul{list-style: none;}
 /*astronaut*/
 .astronaut{
 	position: relative;
+	top:100%;
 	width:150px;
 	height: 200px;
 	transform: rotate(-36deg) scale(0.6);
@@ -662,4 +677,28 @@ ol, ul{list-style: none;}
 	100%{
 		transform: translate(150%,150%);
 	}
+}
+
+/*nav*/
+nav{
+	position: fixed;
+	top:50%;
+	right:15px;
+	z-index: 1;
+	margin-top:-86px;
+}
+nav ul{
+	display: flex;
+	flex-direction: column;
+}
+nav li{
+	width:6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color: #fff;
+	transition: all 0.3s;
+	margin-bottom:20px;
+}
+nav li.active{
+	transform: scale(2);
 }

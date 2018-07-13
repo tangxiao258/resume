@@ -16,7 +16,7 @@
 	</nav>
 	<main>
 		<div id="fullpage">
-			<div class="home-page">
+			<div class="section section1">
 				<div class="space-wrapper">
 					 <div class="home-content">
 						<h1>Hello World</h1>
@@ -41,12 +41,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="person-info">
+			<div class="section section2">
 			   <div class="saturn">
 			   	<div class="saturn-core animation-saturn"></div>
 			   </div>
 			   <div class="mars animation-marsJump"></div>
-			   <!-- <div class="venus"></div> -->
 			   <div class="earth-second"></div>
 				<h1>About Me</h1>
 				<div class="avtor-wrapper">
@@ -108,7 +107,7 @@
 					</li>
 				</ol>
 			</div>
-			<div class="skill-info">
+			<div class="section section3">
 			    <div class="astronaut">
 			    	<div class="head"></div>
 			    	<div class="body">
@@ -123,37 +122,40 @@
 			    		<span></span>
 			    	</div>
 			    </div>
-				<!-- <h1>技能描述</h1>
-				<ul class="skill-list">
-					<li>
-						<p class="skill-name">1. 微信小程序</p>
-						<p class="skill-desc">可独立开发微信小程序，熟悉微信网络请求、数据缓存等API的使用。</p>
-					</li>
-					<li>
-						<p class="skill-name">2. Vue</p>
-						<p class="skill-desc">熟悉Vue常用功能，如数据绑定、vue-router、vuex等。</p>
-					</li>
-					<li>
-						<p class="skill-name">3. Angular</p>
-						<p class="skill-desc">熟悉Angular数据绑定，组件通信及事件发布订阅等常用功能。</p>
-					</li>
-					<li>
-						<p class="skill-name">4. jQuery</p>
-						<p class="skill-desc">熟悉 jQuery 的常用 API，能使用 jQuery 制作网站、轮播、Tab 组件等。</p>
-					</li>
-					<li>
-						<p class="skill-name">5. HTML 5 & CSS 3</p>
-						<p class="skill-desc">能独立制作精美网页，掌握 CSS 3 动画、过渡效果、响应式等常用技术。</p>
-					</li>
-					<li>
-						<p class="skill-name">6. 移动端页面</p>
-						<p class="skill-desc">会使用 REM、vw/vh、FastClick 等技术制作适配手机设备的页面。</p>
-					</li>
-					<li>
-						<p class="skill-name">7. 前端框架</p>
-						<p class="skill-desc">理解 MVC、MVVM 等思想，可以熟练使用相关的库，如 Vue、React</p>
-					</li>
-				</ul> -->
+			    <!-- <div class="venus"></div> -->
+				<div class="skill-content">
+					<h1>技能描述</h1>
+					<ul class="skill-list">
+						<li>
+							<p class="skill-name">1. 微信小程序</p>
+							<p class="skill-desc">可独立开发微信小程序，熟悉微信网络请求、数据缓存等API的使用。</p>
+						</li>
+						<li>
+							<p class="skill-name">2. Vue</p>
+							<p class="skill-desc">熟悉Vue常用功能，如数据绑定、vue-router、vuex等。</p>
+						</li>
+						<li>
+							<p class="skill-name">3. Angular</p>
+							<p class="skill-desc">熟悉Angular数据绑定，组件通信及事件发布订阅等常用功能。</p>
+						</li>
+						<li>
+							<p class="skill-name">4. jQuery</p>
+							<p class="skill-desc">熟悉 jQuery 的常用 API，能使用 jQuery 制作网站、轮播、Tab 组件等。</p>
+						</li>
+						<li>
+							<p class="skill-name">5. HTML 5 & CSS 3</p>
+							<p class="skill-desc">能独立制作精美网页，掌握 CSS 3 动画、过渡效果、响应式等常用技术。</p>
+						</li>
+						<li>
+							<p class="skill-name">6. 移动端页面</p>
+							<p class="skill-desc">会使用 REM、vw/vh、FastClick 等技术制作适配手机设备的页面。</p>
+						</li>
+						<li>
+							<p class="skill-name">7. 前端框架</p>
+							<p class="skill-desc">理解 MVC、MVVM 等思想，可以熟练使用相关的库，如 Vue、React</p>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</main>
@@ -161,5 +163,31 @@
 	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<script src="./js/fullpage.js"></script>
 	<script src="./js/stars.js"></script>
+	<script>
+		!(function(){
+		    $('#fullpage').fullpage({
+                anchors:['page1','page2','page3','page4'],
+                menu:'#menu',
+                afterRender:function(){
+		            $('.section1 h1, .section1 p').hide();
+		            $('.section1 h1, .section1 p').fadeIn(2000);
+		        },
+		        afterLoad:function(anchorLink, index){
+		            if(index == 2){
+		                $('.section2').find('h1').fadeIn(2000);
+		                $('.info-content').animate({top:'0'},1000);
+		            }
+		            if(index == 3){
+		                $('.section3 .astronaut').animate({top:'-40%'},2000);
+		                $('.section3 .skill-content').animate({top:'-30%'},2000);
+		            }
+		            if(index == 4){
+		                $('.section4 h1').fadeIn(2000);
+		                $('.section4 h3').delay(1000).animate({marginTop:'50px'},1000);
+		            }
+		        },
+		    })
+		})()
+	</script>
 	</body>
 </html>	
