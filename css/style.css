@@ -248,6 +248,7 @@ ol, ul{list-style: none;}
 	align-items: center;
 	background-color: #0f1729;
 	color:#fff;
+	z-index: -1;
 }
 .person-info h1{
 	text-align: center;
@@ -255,7 +256,7 @@ ol, ul{list-style: none;}
 }
 .avtor-wrapper img{
 	border-radius: 50%;
-	border:3px solid #fff;
+	border:3px solid #525988;
 }
 
 .star-container{
@@ -336,4 +337,116 @@ ol, ul{list-style: none;}
 
 .skill-info .skill-desc{
 	padding-left:2em;
+}
+
+/*saturn*/
+.saturn {
+    height: 65px;
+    width: 65px;
+    position: relative;
+}
+.saturn:before, .saturn:after{
+	position: absolute;
+	content: '';
+	top:-3px;
+	left: -5px;
+	width: 55px;
+	height: 55px;
+	background-color: transparent;
+	border-top:10px solid #a98236;
+	border-right: 10px solid #a98236;
+	border-left: 0;
+	border-bottom: 0;
+	border-radius: 100% 70% 100% 70%;
+	transform: rotate(-45deg) skew(65deg);
+}
+.saturn:after{
+	border-left:10px solid #a98236;
+	border-bottom: 10px solid #a98236;
+	border-right: 0;
+	border-top: 0;
+}
+.saturn:before{
+	z-index: -1;
+}
+.saturn-core{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+    background-color: #D1AA5E;
+    box-shadow: inset -3px -3px #b89145;
+}
+.animation-saturn{
+	animation: saturn-rotate linear 30s infinite;
+}
+@keyframes saturn-rotate{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+/*mars*/
+.mars{
+	width:42px;
+	height: 42px;
+	background-color: #c25447;
+	box-shadow: inset -3px -3px #b34538;
+	border-radius: 50%;
+	position: relative;
+}
+.mars::before,.mars::after{
+	position: absolute;
+	content: '';
+	background-color: #ae4033;
+	border-radius: 50%;
+}
+.mars::before{
+	top:23px;
+	left: 20px;
+	width: 12px;
+	height: 12px;
+}
+.mars::after{
+	top:10px;
+	left:5px;
+	width: 9px;
+	height: 9px;
+}
+.venus{
+	width:55px;
+	height: 55px;
+	border-radius: 50%;
+	background:-webkit-linear-gradient(#e5875f 5px, #c2643c 15px, #D1734B 25px, #ea8c64 40px, #c76941 45px);
+    transform: rotate(30deg);
+}
+.earth-second{
+	position: relative;
+	width: 50px;
+	height: 50px;
+	background-color: #496482;
+	border-radius: 50%;
+	box-shadow: inset -3px -3px #3a5383;
+}
+.earth-second::before, .earth-second::after{
+	position: absolute;
+	content: '';
+	background-color: #5e8249;
+	border-radius: 100% 70% 100% 70%;
+}
+.earth-second::before{
+	top:15px;
+	left: 3px;
+	width: 15px;
+	height: 32px;
+	transform: rotate(-30deg);
+}
+.earth-second::after{
+	top:3px;
+	left: 27px;
+	width: 10px;
+	height: 12px;
+	transform: rotate(-45deg);
 }
