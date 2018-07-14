@@ -167,7 +167,7 @@
 		</div>
 	</main>
 	<style>
-		@media screen and (min-width:900px){
+		@media screen and (min-width:768px){
 			.fullpage-container{
 				position: absolute;
 				top:0;
@@ -185,6 +185,36 @@
 				background-color: #fff;
 				color:#1E1D32;
 			}
+			.sun{
+				transform: scale(1.2);
+			}
+			.earth-moon-group{
+				transform: rotate(190deg) translateY(-90%) scale(1);
+			}
+			.stars-container{
+				display: none;
+			}
+			.section{
+				padding:32px;
+			}
+			.section h1{
+				font-size:18px;
+				font-weight: 300;
+			}
+			.home-content h1{
+				font-size:32px;
+				font-weight: 400;
+			}
+			.home-content p{
+				font-weight: 300;
+			}
+			.info-content li svg{
+				width:18px;
+				height: 18px;
+			}
+			.info-content span{
+				font-size:15px;
+			}
 		}
 	</style>
 	<script src="//at.alicdn.com/t/font_745538_2pqtxotk7ho.js"></script>
@@ -194,7 +224,7 @@
 	<script>
 		!(function(){
 			let screenWidth = document.documentElement.clientWidth
-			if(screenWidth < 450){
+			if(screenWidth < 768){
 				$('#fullpage').fullpage({
 	                anchors:['page1','page2','page3','page4'],
 	                menu:'#menu',

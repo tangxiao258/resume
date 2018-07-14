@@ -4,11 +4,11 @@ ol, ul{list-style: none;}
 .icon {width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; } 
 main{background-color: #0f1729; }
 .section{position:relative;display: flex; flex-direction: column; justify-content: center; align-items: center; color:#fff; z-index: -1; overflow: hidden; }
-.section h1{line-height: 2em; text-align: center; }
+.section h1{line-height: 2em; text-align: center; font-size:24px; font-weight: 500;} 
 /*outspace*/
 .space-wrapper{position: absolute; top:0; left: 0; height: 100vh; width:100%; background-color: #0f1729; color:#fff; display: flex; justify-content: center; }
 .home-content{position: absolute; top:6%; text-align: center; font-family: sans-serif; }
-.home-content h1{line-height: 2em; }
+.home-content h1{line-height: 2em; font-size:32px;font-weight: 400;}
 .stars{width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; animation: star-rotate linear 600s infinite }
 
 @keyframes star-rotate{0%{transform: rotate(0deg); } 100%{transform: rotate(360deg); } }
@@ -56,16 +56,16 @@ main{background-color: #0f1729; }
 .info-content{position: relative; top: 100%; display: flex; flex-direction: column; }
 .info-content li{height: 32px; line-height: 32px; display: flex; align-items: center; margin-bottom:20px; position: relative;}
 .info-content li::after{position: absolute; content: ''; bottom: 0; left: 0; width: 100%; height: 1px; background-color: #f0f0f0; transform: scaleY(0.5); }
-.info-content li svg{width:24px; height: 24px; margin-right:20px; }
-.info-content li span{margin-right:10px; position: relative; }
+.info-content li svg{width:18px; height: 18px; margin-right:20px; }
+.info-content li span{margin-right:10px; position: relative; font-size:15px;}
 .info-content li span.sub-info::after{position: absolute; content: ''; top:calc(50% - (2px / 2)); left:-5px; width:2px; height: 2px; background-color: #fff; }
 
 /*skill info*/
 .skill-content{position: relative; top:120%; padding:0 15px;}
 .skill-list{margin-top:20px;}
 .skill-list li{margin-bottom: 10px; }
-.skill-name{font-size:18px; font-weight: 600; }
-.skill-desc{padding-left:2em; }
+.skill-name{font-size:17px; font-weight: 500; line-height: 2em;}
+.skill-desc{padding-left:2em; font-weight: 300;font-size:15px;}
 
 /*saturn*/
 .saturn {position: absolute; bottom: 10px; right: 30%; height: 65px; width: 65px; }
