@@ -110,6 +110,12 @@
 						</svg>
 						<span>506584418</span>
 					</li>
+					<li>
+						<svg class="icon" aria-hidden="true">
+						    <use xlink:href="#icon-github"></use>
+						</svg>
+						<span>tangxiao258</span>
+					</li>
 				</ol>
 			</div>
 			<div class="section section3 app-right">
@@ -129,7 +135,7 @@
 			    </div>
 				<div class="skill-content">
 					<h1>Skill</h1>
-					<ul class="skill-list">
+					<ol class="skill-list">
 						<li>
 							<p class="skill-name">1. 微信小程序</p>
 							<p class="skill-desc">可独立开发微信小程序，熟悉微信网络请求、数据缓存等API的使用。</p>
@@ -158,7 +164,7 @@
 							<p class="skill-name">7. 前端框架</p>
 							<p class="skill-desc">理解 MVC、MVVM 等思想，可以熟练使用相关的库，如 Vue、React</p>
 						</li>
-					</ul>
+					</ol>
 				</div>
 			</div>
 			<div class="section section4 app-right">
@@ -235,6 +241,9 @@
 				background-color: #fff;
 				color:#1E1D32;
 			}
+			nav{
+				display: none;
+			}
 			.sun{
 				transform: scale(1.2);
 			}
@@ -250,6 +259,9 @@
 			.section h1{
 				font-size:18px;
 				font-weight: 300;
+			}
+			.section3{
+				background-color: rgba(255, 201, 199, 0.2);
 			}
 			.home-content h1{
 				font-size:32px;
@@ -267,7 +279,7 @@
 			}
 		}
 	</style>
-	<script src="//at.alicdn.com/t/font_745538_8oi8nfqg2xh.js"></script>
+	<script src="//at.alicdn.com/t/font_745538_a5ibd8r0qg9.js"></script>
 	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<script src="./js/fullpage.js"></script>
 	<script src="./js/stars.js"></script>
@@ -305,7 +317,7 @@
 				isFullPage.call()
 			}
 
-			$('.project-list').on('click', (e) => {
+			$('.project-list').on('click','li', (e) => {
 				console.log('lala')
 			})
 		})()

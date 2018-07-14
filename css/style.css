@@ -4,7 +4,7 @@ a{text-decoration: none;color:inherit;}
 /*svg*/
 .icon {width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; } 
 main{background-color: #0f1729; }
-.section{position:relative;display: flex; flex-direction: column; justify-content: center; align-items: center; color:#fff; z-index: -1; overflow: hidden; }
+.section{position:relative;display: flex; flex-direction: column; justify-content: center; color:#fff; z-index: -1; overflow: hidden; }
 .section h1{line-height: 2em; text-align: center; font-size:24px; font-weight: 500;} 
 /*outspace*/
 .space-wrapper{position: absolute; top:0; left: 0; height: 100vh; width:100%; background-color: #0f1729; color:#fff; display: flex; justify-content: center; }
@@ -50,12 +50,15 @@ main{background-color: #0f1729; }
 .moon::after{width: 30%; height: 30%; margin:2px 0 0 12px; }
 
 /*about me*/
+.section2{
+	align-items: center;
+}
 .stars-container{width: 100vw; height: 100vh; position: absolute; top:0; left: 0; opacity: 0.8; }
 .avtor-wrapper{display: flex; justify-content: center; margin:20px auto; position: relative; }
 .avtor-wrapper img{border-radius: 50%; border:3px solid #525988; }
 
 .info-content{position: relative; top: 100%; display: flex; flex-direction: column; }
-.info-content li{height: 32px; line-height: 32px; display: flex; align-items: center; margin-bottom:20px; position: relative;}
+.info-content li{height: 32px; line-height: 32px; display: flex; align-items: center; margin-bottom:16px; position: relative;}
 .info-content li::after{position: absolute; content: ''; bottom: 0; left: 0; width: 100%; height: 1px; background-color: #f0f0f0; transform: scaleY(0.5); }
 .info-content li svg{width:18px; height: 18px; margin-right:20px; }
 .info-content li span{margin-right:10px; position: relative; font-size:15px;}
@@ -65,8 +68,8 @@ main{background-color: #0f1729; }
 .skill-content{position: relative; top:120%; padding:0 15px;}
 .skill-list{margin-top:20px;}
 .skill-list li{margin-bottom: 10px; }
-.skill-name{font-size:17px; font-weight: 500; line-height: 2em;}
-.skill-desc{padding-left:2em; font-weight: 300;font-size:15px;}
+.skill-name{font-size: 15px; font-weight: 500; line-height: 2.2em; color:#000;} 
+.skill-desc{font-size: 13px; font-weight: 400; line-height: 2em;}
 
 /*saturn*/
 .saturn {position: absolute; bottom: 10px; right: 30%; height: 65px; width: 65px; }
@@ -130,6 +133,9 @@ nav li.active{transform: scale(2); }
 	font-size: 15px;
     font-weight: 600;
     line-height: 2.4em;
+}
+.project-list a.project-name::hover{
+	color:red;
 }
 .project-list .project-desc{
 	font-size: 13px;
