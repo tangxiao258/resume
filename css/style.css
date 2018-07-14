@@ -1,5 +1,6 @@
 *{margin:0;padding:0;box-sizing: border-box;}
 ol, ul{list-style: none;}
+a{text-decoration: none;color:inherit;}
 /*svg*/
 .icon {width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; } 
 main{background-color: #0f1729; }
@@ -117,3 +118,29 @@ nav{position: fixed; top:50%; right:15px; z-index: 1; margin-top:-86px; }
 nav ul{display: flex; flex-direction: column; }
 nav li{width:6px; height: 6px; border-radius: 50%; background-color: #fff; transition: all 0.3s; margin-bottom:20px; }
 nav li.active{transform: scale(2); }
+
+.project-list{
+	align-self: flex-start;
+	padding:20px 15px;
+}
+.project-list li{
+	margin-bottom: 10px;
+}
+.project-list a.project-name{
+	font-size: 15px;
+    font-weight: 600;
+    line-height: 2.4em;
+}
+.project-list .project-desc{
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 2em;
+}
+.project-list .href-list{
+	padding:10px 0;
+}
+.project-list .href-list svg{
+	width:18px;
+	height: 18px;
+	margin-right:20px;
+}

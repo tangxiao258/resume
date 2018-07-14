@@ -163,11 +163,61 @@
 			</div>
 			<div class="section section4 app-right">
 				<h1>Projects</h1>
+				<ol class="project-list">
+					<li>
+						<a href="https://dongchuan12.github.io/demo/myWork/css/hellokitty/hellokitty.html" class="project-name" target="_blank">1. CSS3绘制Hello Kitty</a>
+						<p class="project-desc">纯CSS3绘制Hello Kitty</p>
+						<div class="href-list">
+							<a href="https://dongchuan12.github.io/demo/myWork/css/hellokitty/hellokitty.html" target="_blank">
+								<svg class="icon" aria-hidden="true">
+								    <use xlink:href="#icon-link"></use>
+								</svg>
+							</a>
+							<a href="https://dongchuan12.github.io/demo/myWork/css/hellokitty/hellokitty.html" target="_blank">
+								<svg class="icon" aria-hidden="true">
+								    <use xlink:href="#icon-code"></use>
+								</svg>
+							</a>
+						</div>
+					</li>
+					<li>
+						<a href="https://dongchuan12.github.io/demo/myWork/css/hellokitty/hellokitty.html" class="project-name" target="_blank">2. 原生键盘导航栏</a>
+						<p class="project-desc">使用原声JS，实现按键导航到指定网页，同时可对对应按键导航进行编辑</p>
+						<div class="href-list">
+							<a href="https://dongchuan12.github.io/demo/myWork/css/hellokitty/hellokitty.html" target="_blank">
+								<svg class="icon" aria-hidden="true">
+								    <use xlink:href="#icon-link"></use>
+								</svg>
+							</a>
+							<a href="https://dongchuan12.github.io/demo/myWork/css/hellokitty/hellokitty.html" target="_blank">
+								<svg class="icon" aria-hidden="true">
+								    <use xlink:href="#icon-code"></use>
+								</svg>
+							</a>
+						</div>
+					</li>
+					<li>
+						<a href="https://dongchuan12.github.io/demo/myWork/css/hellokitty/hellokitty.html" class="project-name" target="_blank">3. Canvas画板</a>
+						<p class="project-desc">使用Canvas实现画板功能，同时提供画笔颜色选择、画笔大小调节、橡皮擦、撤销、一键重置、保存等功能</p>
+						<div class="href-list">
+							<a href="https://dongchuan12.github.io/demo/myWork/css/hellokitty/hellokitty.html" target="_blank">
+								<svg class="icon" aria-hidden="true">
+								    <use xlink:href="#icon-link"></use>
+								</svg>
+							</a>
+							<a href="https://dongchuan12.github.io/demo/myWork/css/hellokitty/hellokitty.html" target="_blank">
+								<svg class="icon" aria-hidden="true">
+								    <use xlink:href="#icon-code"></use>
+								</svg>
+							</a>
+						</div>
+					</li>
+				</ol>
 			</div>
 		</div>
 	</main>
 	<style>
-		@media screen and (min-width:768px){
+		@media screen and (min-width:768px){  /*iPad size*/
 			.fullpage-container{
 				position: absolute;
 				top:0;
@@ -217,37 +267,47 @@
 			}
 		}
 	</style>
-	<script src="//at.alicdn.com/t/font_745538_2pqtxotk7ho.js"></script>
+	<script src="//at.alicdn.com/t/font_745538_8oi8nfqg2xh.js"></script>
 	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<script src="./js/fullpage.js"></script>
 	<script src="./js/stars.js"></script>
 	<script>
 		!(function(){
-			let screenWidth = document.documentElement.clientWidth
-			if(screenWidth < 768){
-				$('#fullpage').fullpage({
-	                anchors:['page1','page2','page3','page4'],
-	                menu:'#menu',
-	                afterRender:function(){
-			            $('.section1 h1, .section1 p').hide();
-			            $('.section1 h1, .section1 p').fadeIn(2000);
-			        },
-			        afterLoad:function(anchorLink, index){
-			            if(index == 2){
-			                $('.section2').find('h1').fadeIn(2000);
-			                $('.info-content').animate({top:'0'},1000);
-			            }
-			            if(index == 3){
-			                $('.section3 .astronaut').animate({top:'-40%'},2000);
-			                $('.section3 .skill-content').animate({top:'0%'},2000);
-			            }
-			            if(index == 4){
-			                $('.section4 h1').fadeIn(2000);
-			                $('.section4 h3').delay(1000).animate({marginTop:'50px'},1000);
-			            }
-			        }
-		    })
+			function isFullPage(){
+				let screenWidth = document.documentElement.clientWidth
+				if(screenWidth < 768){ // iPad size
+					$('#fullpage').fullpage({
+		                anchors:['page1','page2','page3','page4'],
+		                menu:'#menu',
+		                afterRender:function(){
+				            $('.section1 h1, .section1 p').hide();
+				            $('.section1 h1, .section1 p').fadeIn(2000);
+				        },
+				        afterLoad:function(anchorLink, index){
+				            if(index == 2){
+				                $('.section2').find('h1').fadeIn(2000);
+				                $('.info-content').animate({top:'0'},1000);
+				            }
+				            if(index == 3){
+				                $('.section3 .astronaut').animate({top:'-40%'},2000);
+				                $('.section3 .skill-content').animate({top:'0%'},2000);
+				            }
+				            if(index == 4){
+				                $('.section4 h1').fadeIn(2000);
+				                $('.section4 h3').delay(1000).animate({marginTop:'50px'},1000);
+				            }
+				        }
+			        })
+				}
 			}
+			isFullPage.call()
+			window.onresize = () => {
+				isFullPage.call()
+			}
+
+			$('.project-list').on('click', (e) => {
+				console.log('lala')
+			})
 		})()
 	</script>
 	</body>
