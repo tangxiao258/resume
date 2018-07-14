@@ -4,8 +4,8 @@ a{text-decoration: none;color:inherit;}
 /*svg*/
 .icon {width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; } 
 main{background-color: #0f1729; }
-.section{position:relative;display: flex; flex-direction: column; justify-content: center; color:#fff; z-index: -1; overflow: hidden; }
-.section h1{line-height: 2em; text-align: center; font-size:24px; font-weight: 500;} 
+.section{position:relative;display: flex; flex-direction: column; justify-content: center; color:#fff; overflow: hidden; }
+.section h1{margin-top:10px; line-height: 2em; text-align: center; font-size:24px; font-weight: 500;} 
 /*outspace*/
 .space-wrapper{position: absolute; top:0; left: 0; height: 100vh; width:100%; background-color: #0f1729; color:#fff; display: flex; justify-content: center; }
 .home-content{position: absolute; top:6%; text-align: center; font-family: sans-serif; }
@@ -67,9 +67,9 @@ main{background-color: #0f1729; }
 /*skill info*/
 .skill-content{position: relative; top:120%; padding:0 15px;}
 .skill-list{margin-top:20px;}
-.skill-list li{margin-bottom: 10px; }
-.skill-name{font-size: 15px; font-weight: 500; line-height: 2.2em; color:#000;} 
-.skill-desc{font-size: 13px; font-weight: 400; line-height: 2em;}
+.skill-list li{margin-bottom: 6px; }
+.skill-name{font-size: 15px; font-weight: 500; line-height: 2em;} 
+.skill-desc{font-size: 13px; font-weight: 400; line-height: 1.6em;}
 
 /*saturn*/
 .saturn {position: absolute; bottom: 10px; right: 30%; height: 65px; width: 65px; }
@@ -119,34 +119,51 @@ main{background-color: #0f1729; }
 /*nav*/
 nav{position: fixed; top:50%; right:15px; z-index: 1; margin-top:-86px; }
 nav ul{display: flex; flex-direction: column; }
-nav li{width:6px; height: 6px; border-radius: 50%; background-color: #fff; transition: all 0.3s; margin-bottom:20px; }
+nav li{width:4px; height: 4px; border-radius: 50%; background-color: #fff; transition: all 0.3s; margin-bottom:20px; }
 nav li.active{transform: scale(2); }
 
-.project-list{
-	align-self: flex-start;
-	padding:20px 15px;
-}
-.project-list li{
-	margin-bottom: 10px;
-}
-.project-list a.project-name{
-	font-size: 15px;
-    font-weight: 600;
-    line-height: 2.4em;
-}
-.project-list a.project-name::hover{
-	color:red;
-}
-.project-list .project-desc{
-	font-size: 13px;
-	font-weight: 400;
-	line-height: 2em;
-}
-.project-list .href-list{
-	padding:10px 0;
-}
-.project-list .href-list svg{
-	width:18px;
-	height: 18px;
-	margin-right:20px;
+/*section4 project*/
+.project-content{position: relative; left:100%; padding:0 15px;}
+.project-list li{margin-bottom: 10px; }
+.project-list a.project-name{font-size: 15px; font-weight: 600; line-height: 2.2em; }
+.project-list a.project-name:hover{border-bottom:1px solid #1E1D32; }
+.project-list .project-desc{font-size: 13px; font-weight: 400; line-height: 1.6em; }
+.project-list .href-list{padding:8px 0 0px; }
+.project-list .href-list svg{width:16px; height: 16px; margin-right:20px; }
+
+@media screen and (min-width:768px){  /*iPad size*/
+	.fullpage-container{position: absolute; top:0; right:0; width: 50%; }
+	.app-left{position:fixed; width:50%; top:0; left: 0; height: 100vh; }
+	.app-right{background-color: #fff; color:#1E1D32; }
+	nav{display: none; }
+
+	/*stars*/
+	.sun{transform: scale(1.2); }
+	.earth-moon-group{transform: rotate(190deg) translateY(-90%) scale(1); }
+	.stars-container{display: none; }
+
+	/*section*/
+	.section{padding:32px; }
+	.section h1{font-size:18px; font-weight: 300; }
+
+	/*section1*/
+	.home-content h1{font-size:32px; font-weight: 400; }
+	.home-content p{font-weight: 300; }
+
+	/*section2*/
+	.info-content li svg{width:18px; height: 18px; }
+	.info-content span{font-size:15px; }
+
+	/*section3*/
+	.section3{background-color: rgba(255, 201, 199, 0.2); }
+	.skill-list li{margin-bottom: 10px; }
+	.skill-name{line-height: 2.2em;} 
+	.skill-desc{line-height: 2em;}
+	
+	/*section4*/
+	.project-content{left: 0; }
+	.project-list a.project-name{line-height: 2.4em; }
+	.project-list .project-desc{line-height: 2.2em; }
+	.project-list .href-list{padding:8px 0; }
+	.project-list .href-list svg{width: 18px; height: 18px; }
 }
