@@ -1,0 +1,208 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的导航</title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			body{
+				background-color: #c7bad1;
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 2 1'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23c7bad1'/%3E%3Cstop offset='1' stop-color='%23e0adb1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%230352ff' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%230352ff' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='2' y2='2'%3E%3Cstop offset='0' stop-color='%230352ff' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%230352ff' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='2' height='1'/%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23b)' points='0 1 0 0 2 0'/%3E%3Cpolygon fill='url(%23c)' points='2 1 2 0 0 0'/%3E%3C/g%3E%3C/svg%3E");
+				background-attachment: fixed;
+				background-size: cover;
+				background-position: center;
+			}
+			main{
+				height:100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.wrapper{
+				display: inline-block;
+				background-color: rgba(0,0,0, 0.4);
+				padding:25px 25px 13px 13px;
+				border-radius: 10px;
+				/*box-shadow: 10px 10px 10px #525252;*/
+			}
+			.wrapper > div:nth-child(2){
+				margin-left:50px;
+			}
+			.wrapper > div:nth-child(3){
+				margin-left:90px;
+			}
+			.key{
+				display: inline-block;
+				position: relative;
+				width:64px;
+				height:64px;
+				border-radius: 6px;
+				margin-left: 12px;
+				margin-bottom:12px;
+				color:#93efff;
+				background-color: #222;
+				border:1px solid #303536;
+				box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.4);
+				font-size:20px;
+				font-family: keyboard, "Arial Rounded", Helvetica, Arial, sans-serif;
+			}
+			.key .edit{
+				position: absolute;
+				bottom:4px;
+				right:5px;
+				display: none;
+				border:0;
+				border-radius: 1px;
+				padding:1px 2px;
+				font-size:10px;
+			}
+			.key:hover .edit{
+				display: inline-block;
+				background-color: transparent;
+				color:#93efff;
+			}
+			.key .text{
+				position: absolute;
+				top:10px;
+				left:10px;
+				text-shadow: 0 0 10px #314b81;
+				color:#93efff;
+			}
+			.key .logo{
+				width:16px;
+				height:16px;
+				position: absolute;
+				bottom: 4px;
+				left:6px;
+			}
+		</style>
+	</head>
+	<body>
+		<header></header>
+		<main>
+			<div class="wrapper" id="main"></div>
+		</main>
+		<footer></footer>
+		<script src="./main.js"></script>
+		<script>
+		    // 1.初始化数据
+		    var hashA = init()
+		    var key = hashA['key']
+		    var hash = hashA['hash']
+
+			// 2.生成键盘
+			for(var i = 0; i < key['length']; i++){
+				var div = createElement('div')
+				main.appendChild(div)
+
+				var keyItem = key[i]
+				for(var j = 0; j < keyItem['length']; j++){
+					
+					var span = createSpan(keyItem[j].toUpperCase())
+
+					var button = createButton(keyItem[j])
+
+					var img = createImage(hash[keyItem[j]])
+
+					var kbd = createElement('kbd')
+					kbd.className = 'key'
+					kbd.onclick = function(xxx){
+						var key = xxx.target.firstChild.nextSibling['id']
+						var website = hash[key]
+					    window.open('http://' + website, '_blank')
+					}
+					kbd.appendChild(span)
+					kbd.appendChild(button)
+					kbd.appendChild(img)
+					div.appendChild(kbd)
+				}
+			}
+
+			// 3.监听用户输入事件
+			listenToUser()
+
+			function init(){
+	            var key = {
+					'0': {0:'q',1:'w',2:'e',3:'r',4:'t',5:'y',6:'u',7:'i',8:'o',9:'p',length:10},
+					'1': {0:'a',1:'s',2:'d',3:'f',4:'g',5:'h',6:'j',7:'k',8:'l',length:9},
+					'2': {0:'z',1:'x',2:'c',3:'v',4:'b',5:'n',6:'m',length:7},
+					'length': 3
+				}
+				var hash = {'q': 'qq.com', 'w': 'weibo.com', 'e': 'ele.me', 'r': 'renren.com', 't': 'tianya.com', 'y': 'youtube.com', 'u': 'uc.cn' , 'i': 'iqiyi.com', 'o': 'opera.com', 'p': undefined, 'a': 'acfun.tv', 's': 'sohu.com', 'z': 'zhihu.com', 'm': 'www.mcdonalds.com.cn', 'b':'www.bilibili.com','d': 'dribbble.com'
+				}
+
+				// 取出localStorage中的zzz对应的hash
+				var hashLocalStorage = JSON.parse(localStorage.getItem('zzz') || 'null')
+				if(hashLocalStorage){
+					hash = hashLocalStorage
+				}
+				return {
+					'key':key,
+					'hash':hash
+				}
+		    }
+
+			function createElement(name){
+				return document.createElement(name)
+			}
+
+			function createSpan(content){
+				var span = createElement('span')
+				span.className = 'text'
+				span.textContent = content
+
+				return span
+			}
+
+			function createButton(id){
+                var button = createElement('button')
+				button.textContent = '编辑'
+				button.className = 'edit'
+				button.id = id
+				button.onclick = function(haha){
+					var x = prompt('请输入一个网址')
+					var button2 = haha['target']
+					var key = button2['id']
+					hash[key] = x
+
+					var img2 = button2.nextSibling
+					img2.src = 'http://' + x + '/favicon.ico'
+					img2.onerror = function(){
+						img2.src = './dott.png'
+					}
+					localStorage.setItem('zzz', JSON.stringify(hash))
+
+					// 阻止事件冒泡
+					haha.stopPropagation()
+				}
+
+				return button
+			}
+
+			function createImage(domain){
+				var img = createElement('img')
+				img.className = 'logo'
+				if(domain){
+					img.src = 'http://' + hash[keyItem[j]] + '/favicon.ico'
+				}else{
+					img.src = './dott.png'
+				}
+				img.onerror = function(xxx){
+					xxx.target.src = './dott.png'
+				}
+				return img
+			}
+
+			function listenToUser(){
+	            document.onkeypress = function(xjshjsi){
+					var key = xjshjsi['key'] 
+					var website = hash[key]
+					window.open('http://' + website, '_blank')
+				}
+			}
+		</script>
+	</body>
+</html>
